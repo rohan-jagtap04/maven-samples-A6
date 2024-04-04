@@ -12,7 +12,18 @@ pipeline {
         sh 'mvn clean'
       }
     }
+    
+    stage('verify') {
+      steps {
+        sh 'mvn verify'
+      }
+    }
 
+    stage('run'){
+      steps{
+        sh 'mvn test'
+      }
+    }
   }
   tools {
     maven 'DHT_MAVEN'
