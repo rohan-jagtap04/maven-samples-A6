@@ -13,6 +13,12 @@ pipeline {
       }
     }
 
+    stage('mvn test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
   }
   tools {
     maven 'DHT_MAVEN'
