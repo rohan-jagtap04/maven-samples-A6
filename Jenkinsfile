@@ -9,19 +9,7 @@ pipeline {
 
     stage('clean') {
       steps {
-        sh 'mvn clean'
-      }
-    }
-
-    stage('verify') {
-      steps {
-        sh 'mvn verify'
-      }
-    }
-
-    stage('run') {
-      steps {
-        sh 'mvn test'
+        sh 'mvn clean && mvn verify && mvn test'
       }
     }
 
